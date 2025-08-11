@@ -1,0 +1,12 @@
+name: dino-game
+command:
+- flask
+- --app
+- app
+- --debug
+- run
+- --host=0.0.0.0
+- --port=8000
+env:
+- name: CATALOG
+  value: workspace

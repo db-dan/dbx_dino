@@ -1,0 +1,3 @@
+Flask==3.0.3
+databricks-sdk==0.32.3
+pyyaml==6.0.2

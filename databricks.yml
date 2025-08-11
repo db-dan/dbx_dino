@@ -1,0 +1,17 @@
+# This is a Databricks asset bundle definition for dbx_dino.
+bundle:
+  name: dbx_dino
+  uuid: b0a8e5b0-26ea-4898-b520-02c8e2a0d89a
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+targets:
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-1c02cfdf-4b85.cloud.databricks.com/
+      root_path: /Workspace/Users/dan@dmb.codes/.bundle/${bundle.name}/${bundle.target}
+    git:
+      branch: main

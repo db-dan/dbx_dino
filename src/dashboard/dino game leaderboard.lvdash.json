@@ -1,0 +1,590 @@
+{
+  "datasets": [
+    {
+      "name": "078a12f1",
+      "displayName": "synthetic_games",
+      "queryLines": [
+        "SELECT * FROM\n",
+        "IDENTIFIER(:catalog || '.dino_game.synthetic_games')"
+      ],
+      "parameters": [
+        {
+          "displayName": "catalog",
+          "keyword": "catalog",
+          "dataType": "STRING",
+          "defaultSelection": {
+            "values": {
+              "dataType": "STRING",
+              "values": [
+                {
+                  "value": "workspace"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "afa9b53e",
+      "displayName": "games_leaderboard",
+      "queryLines": [
+        "SELECT * FROM IDENTIFIER(:catalog || '.dino_game.games_leaderboard')"
+      ],
+      "parameters": [
+        {
+          "displayName": "catalog",
+          "keyword": "catalog",
+          "dataType": "STRING",
+          "defaultSelection": {
+            "values": {
+              "dataType": "STRING",
+              "values": [
+                {
+                  "value": "workspace"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "b0337bb3",
+      "displayName": "games_silver",
+      "queryLines": [
+        "SELECT * FROM IDENTIFIER(:catalog || '.dino_game.games_silver')"
+      ],
+      "parameters": [
+        {
+          "displayName": "catalog",
+          "keyword": "catalog",
+          "dataType": "STRING",
+          "defaultSelection": {
+            "values": {
+              "dataType": "STRING",
+              "values": [
+                {
+                  "value": "workspace"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "a2a30d55",
+      "displayName": "New Page",
+      "layout": [
+        {
+          "widget": {
+            "name": "71a5d63d",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "afa9b53e",
+                  "fields": [
+                    {
+                      "name": "rank",
+                      "expression": "`rank`"
+                    },
+                    {
+                      "name": "player",
+                      "expression": "`player`"
+                    },
+                    {
+                      "name": "score",
+                      "expression": "`score`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "rank",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100000,
+                    "title": "rank",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "rank"
+                  },
+                  {
+                    "fieldName": "player",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100001,
+                    "title": "player",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "player"
+                  },
+                  {
+                    "fieldName": "score",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100002,
+                    "title": "score",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "score"
+                  }
+                ]
+              },
+              "invisibleColumns": [],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false,
+              "frame": {
+                "title": "Top Players",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 5,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "1c903171",
+            "multilineTextboxSpec": {
+              "lines": [
+                "![img](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Chromium_T-Rex-error-offline.svg/1024px-Chromium_T-Rex-error-offline.svg.png)"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "a41e34d6",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b0337bb3",
+                  "fields": [
+                    {
+                      "name": "obstacle_that_killed",
+                      "expression": "`obstacle_that_killed`"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "obstacle_that_killed",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Obstacle"
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Kills"
+                  },
+                  "displayName": "Kills"
+                },
+                "color": {
+                  "fieldName": "obstacle_that_killed",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "obstacle_that_killed"
+                },
+                "label": {
+                  "show": false
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Most Lethal Obstacle"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "59339901",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b0337bb3",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(*)",
+                  "displayName": "Count of Records"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Games Played"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 2,
+            "width": 1,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "1863ab68",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b0337bb3",
+                  "fields": [
+                    {
+                      "name": "countdistinct(player)",
+                      "expression": "COUNT(DISTINCT `player`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "countdistinct(player)",
+                  "displayName": "Count of Unique player"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Unique Players"
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 2,
+            "width": 1,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "c91953e5",
+            "queries": [
+              {
+                "name": "dashboards/01ef79bebca21813b6147896d98e75f3/datasets/01ef7f2d7acf1e36a7c831cb6cdb2b63_player",
+                "query": {
+                  "datasetName": "b0337bb3",
+                  "fields": [
+                    {
+                      "name": "player",
+                      "expression": "`player`"
+                    },
+                    {
+                      "name": "player_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "player",
+                    "displayName": "player",
+                    "queryName": "dashboards/01ef79bebca21813b6147896d98e75f3/datasets/01ef7f2d7acf1e36a7c831cb6cdb2b63_player"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Player"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 2,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "34cf4e10",
+            "queries": [
+              {
+                "name": "dashboards/01f0769b2b961d8cb5ac517d20e2792f/datasets/01f0769b2b97136499091d251f9b9732_game_datetime",
+                "query": {
+                  "datasetName": "b0337bb3",
+                  "fields": [
+                    {
+                      "name": "game_datetime",
+                      "expression": "`game_datetime`"
+                    },
+                    {
+                      "name": "game_datetime_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-date-range-picker",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "game_datetime",
+                    "displayName": "game_datetime",
+                    "queryName": "dashboards/01f0769b2b961d8cb5ac517d20e2792f/datasets/01f0769b2b97136499091d251f9b9732_game_datetime"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Date"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 3,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "99f6b0c1",
+            "multilineTextboxSpec": {
+              "lines": [
+                "# Dino Game Leaderboard\n",
+                "[Play Game](https://example.databricksapps.com)"
+              ]
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 5,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "eefa2bcf",
+            "queries": [
+              {
+                "name": "dashboards/01f0769b2b961d8cb5ac517d20e2792f/datasets/01f0769b2b97136499091d251f9b9732_game_id",
+                "query": {
+                  "datasetName": "b0337bb3",
+                  "fields": [
+                    {
+                      "name": "game_id",
+                      "expression": "`game_id`"
+                    },
+                    {
+                      "name": "game_id_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "game_id",
+                    "displayName": "game_id",
+                    "queryName": "dashboards/01f0769b2b961d8cb5ac517d20e2792f/datasets/01f0769b2b97136499091d251f9b9732_game_id"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Game ID"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 4,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "1d794278",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "afa9b53e",
+                  "fields": [
+                    {
+                      "name": "max(score)",
+                      "expression": "MAX(`score`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "max(score)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "none",
+                    "decimalPlaces": {
+                      "type": "exact",
+                      "places": 0
+                    }
+                  },
+                  "displayName": "Maximum score"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "High Score"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 1,
+            "height": 3
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ]
+}

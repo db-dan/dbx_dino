@@ -1,0 +1,50 @@
+# The main job for dbx_dino.
+resources:
+  jobs:
+    synthetic_games_job:
+      name: synthetic_games_job
+      tasks:
+        - task_key: synthetic_games
+          notebook_task:
+            notebook_path: ../src/synthetic_games.py
+    process_games_job:
+      name: process_games_job
+      tasks:
+        - task_key: process_games_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.process_games.id}
+      trigger:
+        file_arrival:
+          url: /Volumes/${resources.volumes.games.catalog_name}/${resources.volumes.games.schema_name}/${resources.volumes.games.name}/
+  pipelines:
+    process_games:
+      name: process_games
+      target: dino_game
+      serverless: true
+      catalog: workspace
+      libraries:
+        - notebook:
+            path: ../src/games_dlt.py
+  schemas:
+    dino_game:
+      name: dino_game
+      catalog_name: workspace
+  volumes:
+    games:
+      catalog_name: workspace
+      name: games
+      schema_name: dino_game
+  dashboards:
+    dino_game_leaderboard:
+      display_name: "dino game leaderboard"
+      file_path: ../src/dashboard/dino game leaderboard.lvdash.json
+      warehouse_id: ${var.warehouse_id}
+  apps:
+    dino_game_app:
+      name: "dino-game"
+      description: "Super fun dinosaur game"
+      source_code_path: ../src/app
+variables:
+  warehouse_id:
+    description: "SQL warehouse ID"
+    default: "e0aaf25568cdc4e2"

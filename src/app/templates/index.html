@@ -1,0 +1,36 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dino Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <header>
+        <h1>🦖 Databricks Apps Demo</h1>
+    </header>
+    <main>
+        <div id="gameInfo">
+            <p id="username">Username: </p>
+            <p id="gameID">Game ID: </p>
+            <p id="score">Score: 0</p>
+            <p id="highScore">High Score: 0</p>
+        </div>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div id="gameInstructions">
+            <p>Use up arrow or space to jump, and down arrow to duck</p>
+            <!-- TODO: replace placeholder link with the deployed Dashboard -->
+            <p><a href="https://example.com"> Leaderboard</a> <a href="https://github.com/db-dan/dbx_dino"> Repo</a></p>
+        </div>
+    </main>
+    <!-- Include game.js -->
+    <script src="/static/js/game.js"></script>
+</body>
+
+</html>
